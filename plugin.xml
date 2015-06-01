@@ -52,7 +52,7 @@
 		<dependency id="com.google.playservices" url="https://github.com/MobileChromeApps/google-play-services" commit="1f56399572d255193f8f9564843df60e50938e69" />
 -->		
 		<dependency id="com.google.playservices@21.0.0" />
-        <source-file src="FlurryDFPAdapter-4.0.0.r1.jar" target-dir="libs" />		
+        <source-file src="src/android/FlurryDFPAdapter-4.0.0.r1.jar" target-dir="libs" />		
      </platform>
      
      <!-- ios -->
