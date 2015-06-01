@@ -72,7 +72,7 @@
          <framework src="SystemConfiguration.framework" />
          <framework src="UIKit.framework" />
          <framework src="libz.dylib" />
-		 <source-file src="libFlurryDFPAdapter_5.4.0.r1.a" framework="true"/>
+		 <source-file src="src/ios/libFlurryDFPAdapter_5.4.0.r1.a" framework="true"/>
     </platform>
 
 	<dependency id="com.cranberrygame.cordova.plugin.ad.admob" url="https://github.com/cranberrygame/cordova-plugin-ad-admob" />
