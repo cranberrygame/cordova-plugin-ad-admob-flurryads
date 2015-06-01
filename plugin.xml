@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.cranberrygame.cordova.plugin.ad.admob.flurryads"
+    version="1.0.0">
+	
+    <name>Cordova Admob-FlurryAds Mediation Plugin</name>
+    <description>Cordova Admob-FlurryAds Mediation Plugin</description>
+    <author>Sang Ki Kwon (Cranberrygame)</author>		
+    <license>MIT</license>
+    <keywords>cordova,plugin,ad,admob,monetisation,flurryads,mediation</keywords>
+    <repo>https://github.com/cranberrygame/cordova-plugin-ad-admob</repo>
+    <issue>https://github.com/cranberrygame/cordova-plugin-ad-admob/issues</issue> 	
+	<engines>
+	    <engine name="cordova" version=">=3.0.0" />
+	</engines>
+	
+    <!-- android -->
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<activity android:name="com.flurry.android.FlurryFullscreenTakeoverActivity" 
+				android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize">
+			</activity>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/*">
+			<uses-permission android:name="android.permission.INTERNET"/>
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+			<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    		<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        </config-file>
+          
+		<!-- cranberrygame start: com.google.playservices -->
+<!--		
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+		</config-file>
+-->		
+		<!-- cranberrygame end -->
+		
+        <source-file src="src/android/FlurryAds-5.3.0.jar" target-dir="libs" />
+        <source-file src="src/android/FlurryAnalytics-5.3.0.jar" target-dir="libs" />
+		<!-- cranberrygame start: com.google.playservices -->
+<!--		
+		<source-file src="src/android/google-play-services.jar" target-dir="libs" />
+		<source-file src="src/android/version.xml" target-dir="res/values" />
+-->		
+		<!-- cranberrygame end -->
+		
+<!--
+		<dependency id="com.google.playservices" url="https://github.com/MobileChromeApps/google-play-services" commit="1f56399572d255193f8f9564843df60e50938e69" />
+-->		
+		<dependency id="com.google.playservices@21.0.0" />
+        <source-file src="FlurryDFPAdapter-4.0.0.r1.jar" target-dir="libs" />		
+     </platform>
+     
+     <!-- ios -->
+     <platform name="ios">    
+         <header-file src="src/ios/Flurry.h" />
+         <header-file src="src/ios/FlurryAds.h" />
+         <header-file src="src/ios/FlurryAdDelegate.h" />
+         <source-file src="src/ios/libFlurry_5.4.0.a" framework="true" />
+         <source-file src="src/ios/libFlurryAds_5.4.0.a" framework="true" />         
+         <framework src="AdSupport.framework" />
+         <framework src="CoreGraphics.framework" />
+         <framework src="Foundation.framework" />
+         <framework src="MediaPlayer.framework" />
+         <framework src="Security.framework" />
+         <framework src="StoreKit.framework" />
+         <framework src="MessageUI.framework" />
+         <framework src="SystemConfiguration.framework" />
+         <framework src="UIKit.framework" />
+         <framework src="libz.dylib" />
+		 <source-file src="libFlurryDFPAdapter_5.4.0.r1.a" framework="true"/>
+    </platform>
+
+	<dependency id="com.cranberrygame.cordova.plugin.ad.admob" url="https://github.com/cranberrygame/cordova-plugin-ad-admob" />
+</plugin>
