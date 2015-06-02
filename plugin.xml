@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.cranberrygame.cordova.plugin.ad.admob.flurryads"
-    version="1.0.0">
+    version="1.0.2">
 	
     <name>Cordova Admob-FlurryAds Mediation Plugin</name>
     <description>Cordova Admob-FlurryAds Mediation Plugin</description>
@@ -17,7 +17,7 @@
 	
     <!-- android -->
     <platform name="android">
-        <source-file src="src/android/FlurryDFPAdapter-4.0.0.r1.jar" target-dir="libs" />		
+        <source-file src="src/android/flurryAndroidDFPandAdMobMediationAdapter-5.0.0.r1.jar" target-dir="libs" />		
 
 		<!-- dependency -->
 		<config-file target="AndroidManifest.xml" parent="/manifest/application">
@@ -39,8 +39,8 @@
 		</config-file>
 -->		
 		<!-- cranberrygame end -->		
-        <source-file src="src/android/FlurryAds-5.3.0.jar" target-dir="libs" />
-        <source-file src="src/android/FlurryAnalytics-5.3.0.jar" target-dir="libs" />
+        <source-file src="src/android/FlurryAds-5.5.0.jar" target-dir="libs" />
+        <source-file src="src/android/FlurryAnalytics-5.5.0.jar" target-dir="libs" />
 		<!-- cranberrygame start: com.google.playservices -->
 <!--		
 		<source-file src="src/android/google-play-services.jar" target-dir="libs" />
@@ -56,14 +56,25 @@
      
      <!-- ios -->
      <platform name="ios">    
-		<source-file src="src/ios/libFlurryDFPAdapter_5.4.0.r1.a" framework="true"/>
+		<source-file src="src/ios/libFlurryDFPAdapter_6.0.0.r1.a" framework="true"/>
 
 		<!-- dependency -->
 		<header-file src="src/ios/Flurry.h" />
-		<header-file src="src/ios/FlurryAds.h" />
-		<header-file src="src/ios/FlurryAdDelegate.h" />
-		<source-file src="src/ios/libFlurry_5.4.0.a" framework="true" />
-		<source-file src="src/ios/libFlurryAds_5.4.0.a" framework="true" />         
+		<header-file src="src/ios/FlurryWatch.h" />
+		<header-file src="src/ios/FlurryAdBanner/FlurryAdBanner.h" />
+		<header-file src="src/ios/FlurryAdBanner/FlurryAdBannerDelegate.h" />
+		<header-file src="src/ios/FlurryAdInterstitial/FlurryAdInterstitial.h" />
+		<header-file src="src/ios/FlurryAdInterstitial/FlurryAdInterstitialDelegate.h" />
+		<header-file src="src/ios/FlurryAdNative/FlurryAdNative.h" />
+		<header-file src="src/ios/FlurryAdNative/FlurryAdNativeAsset.h" />
+		<header-file src="src/ios/FlurryAdNative/FlurryAdNativeDelegate.h" />
+		<header-file src="src/ios/FlurryAdNative/FlurryAdNativeStyle.h" />
+		<header-file src="src/ios/Shared/FlurryAdError.h" />
+		<header-file src="src/ios/Shared/FlurryAdTargeting.h" />
+		<header-file src="src/ios/StaticAPI/FlurryAdDelegate.h" />
+		<header-file src="src/ios/StaticAPI/FlurryAds.h" />
+		<source-file src="src/ios/libFlurry_6.5.0.a" framework="true" />
+		<source-file src="src/ios/libFlurryAds_6.5.0.a" framework="true" />         
 		<framework src="AdSupport.framework" />
 		<framework src="CoreGraphics.framework" />
 		<framework src="Foundation.framework" />
